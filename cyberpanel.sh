@@ -1,7 +1,7 @@
 #!/usr/bin/expect
 
 # Run the CyberPanel installation script using curl or wget
-sudo spawn sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/install.sh)
+spawn sudo sh -c "{ curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/install.sh }"
 
 # Expect the script to ask for confirmation
 expect "Install CyberPanel."
@@ -24,7 +24,7 @@ expect "Remote MySQL [y/N]"
 send "n\n"
 
 # Expect the script to ask for installation type
-expect "Press Enter key to continue with latest version or Enter specific version such as: 1.9.4 , 2.0.1 , 2.0.2 ...etc"
+expect "Press Enter key to continue with the latest version or Enter a specific version such as: 1.9.4, 2.0.1, 2.0.2, etc."
 send "2.3.5\n"
 
 # Expect the script to ask for installation type
